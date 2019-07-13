@@ -5,5 +5,5 @@ export const validate = (number) => {
     let result = [...number+'']
     .map(n => +n)
     .reduce((sum, digit) => sum + Math.pow(digit, [...number+''].length), 0);
-    return result === number?true:false
+    return result === number;
 };
