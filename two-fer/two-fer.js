@@ -3,7 +3,7 @@
        return "One for you, one for me.";
     }
     if(typeof name !== 'string' || name.match(/[^A-Z]/gi)){
-      throw new Error('Invalid input data')
+      throw new Error('Invalid input data');
     }
-    return `One for ${name}, one for me.`
+    return `One for ${name}, one for me.`;
  }
