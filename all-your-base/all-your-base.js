@@ -4,21 +4,20 @@
 //
 const pow = (base, i) => Math.pow(base, i);
 export const convert = (number, base, newBase) => {
+  const result = [];
   number.find((n) => {
-    console.log(n);
-    if (n === undefined || n < 0 || n >= base || (number[0] === 0 && number.length > 0)) {
+    if (n === undefined || n < 0 || n >= base || (n === 0 && number.length > 1)) {
       throw new Error('Input has wrong format');
-    }
-    if(number[0] === 0 && number.length === 0){
-      return [0];
+    } 
+    if(n === 0 && number.length === 1){
+      result.push(n);
     }
   });
-  
+
   let inTenBase = number.reverse().reduce((sum, integer, index) => {
     return sum + integer * pow(base, index);
   }, 0)
-  
-  const result = [];
+
   let j = 0
   while (inTenBase / pow(newBase, j) > 1) j += 1;
   j -= 1;
@@ -27,5 +26,6 @@ export const convert = (number, base, newBase) => {
     inTenBase %= pow(newBase, j);
     j -= 1;
   }
+  
   return result
 };
