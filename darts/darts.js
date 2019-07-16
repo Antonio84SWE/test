@@ -1,8 +1,8 @@
-//
-// This is only a SKELETON file for the 'Darts' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
-export const solve = () => {
-  throw new Error("Remove this statement and implement this function");
-};
+export const solve = (x, y) => {
+  const d = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+  const point =
+    (d <= 10 && d > 5) ? 1 :
+    (d <= 5 && d > 1) ? 5 :
+    (d <= 1) ? 10 : 0;
+  return point
+}
