@@ -1,7 +1,8 @@
-//
-// This is only a SKELETON file for the 'Resistor Color Duo' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-export const value = () => {
-  
+const resistMnemonics = ["black","brown","red","orange","yellow","green","blue","violet","grey","white"];
+export const value = (colorCodes) => {
+  return +parseInt(colorCodes.reduce((sum, color) => {
+    return "" + sum + resistMnemonics.indexOf(color);
+  },0));
 };
+// "" forces integers into string to concatenate them
+// + trims the leading zero after the concatenation 
