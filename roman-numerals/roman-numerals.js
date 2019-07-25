@@ -3,24 +3,16 @@ const romanSign = [
   ['V', 'L', 'D']
 ];
 
-const romanNumber = (n, index) => {
-  if (n < 4) {
-    return romanSign[0][index].repeat(n);
-  }
-  if (n === 4) {
-    return romanSign[0][index] + romanSign[1][index];
-  }
-  if (n >= 5 && n <= 8) {
-    return romanSign[1][index] + romanSign[0][index].repeat(n - 5);
-  }
-  return romanSign[0][index] + romanSign[0][index + 1];
+const romanNumber = (n, i) => {
+  return n < 4 ? romanSign[0][i].repeat(n) :
+    n === 4 ? romanSign[0][i] + romanSign[1][i] :
+    n >= 5 && n <= 8 ? romanSign[1][i] + romanSign[0][i].repeat(n - 5) :
+    romanSign[0][i] + romanSign[0][i + 1];
 }
 
 export const toRoman = (number) => {
   return [...number + '']
     .map(n => +n)
     .reverse()
-    .reduce((sum, number, index) => {
-      return romanNumber(number, index) + sum;
-    }, '')
+    .reduce((sum, number, index) => romanNumber(number, index) + sum, '')
 };
