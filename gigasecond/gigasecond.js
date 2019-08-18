@@ -1,3 +1,3 @@
-export const gigasecond = (startDate) => {
-  return new Date(startDate.getTime() + Math.pow(10, 12));
+export const GIGASECOND = (startDate) => {
+  return new Date(startDate.getTime() + 1e12);
 }
