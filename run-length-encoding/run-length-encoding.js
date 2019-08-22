@@ -1,12 +1,15 @@
-//
-// This is only a SKELETON file for the 'Run Length Encoding' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
-export const encode = () => {
-  throw new Error("Remove this statement and implement this function");
-};
-
-export const decode = () => {
-  throw new Error("Remove this statement and implement this function");
-};
+export const encode = (code) => {
+  if (code === '') {
+    return code;
+  }
+  let counter = 1;
+  const CODESPLIT = code.split('');
+  return CODESPLIT.reduce((sum, letter, i) => {
+    letter === CODESPLIT[i + 1] ?
+      counter++ :
+      counter === 1 ?
+      sum += letter :
+      (sum += '' + counter + letter, counter = 1);
+    return sum;
+  }, '')
+}
