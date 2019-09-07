@@ -30,7 +30,7 @@ export class Triplet {
       for (let b = a; b <= maxB; b++) {
         for (let c = b; c <= max; c++) {
           let triNumbers = new Triplet(a, b, c);
-          if (triNumbers.isPythagorean()) {
+          if (triNumbers.isPythagorean() && (!sum || sum === triNumbers.sum())) {
             triplets.push(triNumbers);
           }
         }
