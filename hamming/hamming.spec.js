@@ -23,13 +23,13 @@ describe('Hamming', () => {
     expect(compute('GGACGGATTCTG', 'AGGACGGATTCT')).toEqual(9);
   });
 
-  xtest('disallow first strand longer', () => {
+  test('disallow first strand longer', () => {
     expect(() => compute('AATG', 'AAA')).toThrow(
       new Error('left and right strands must be of equal length'),
     );
   });
 
-  xtest('disallow second strand longer', () => {
+  test('disallow second strand longer', () => {
     expect(() => compute('ATA', 'AGTG')).toThrow(
       new Error('left and right strands must be of equal length'),
     );
