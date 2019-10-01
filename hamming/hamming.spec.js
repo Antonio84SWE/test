@@ -11,7 +11,7 @@ describe('Hamming', () => {
     expect(compute('A', 'A')).toEqual(0);
   });
 
-  xtest('single letter different strands', () => {
+  test('single letter different strands', () => {
     expect(compute('G', 'T')).toEqual(1);
   });
 
@@ -19,7 +19,7 @@ describe('Hamming', () => {
     expect(compute('GGACTGAAATCTG', 'GGACTGAAATCTG')).toEqual(0);
   });
 
-  xtest('long different strands', () => {
+  test('long different strands', () => {
     expect(compute('GGACGGATTCTG', 'AGGACGGATTCT')).toEqual(9);
   });
 
