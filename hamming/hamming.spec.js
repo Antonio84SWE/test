@@ -35,7 +35,7 @@ describe('Hamming', () => {
     );
   });
 
-  xtest('disallow left empty strand', () => {
+  test('disallow left empty strand', () => {
     expect(() => compute('', 'G')).toThrow(
       new Error('left strand must not be empty'),
     );
