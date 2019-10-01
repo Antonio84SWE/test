@@ -9,6 +9,9 @@ export const compute = (DNA1, DNA2) => {
   if (size1 === 0 && size2 !== 0) {
     throw new Error('left strand must not be empty')
   }
+  if (size1 !== 0 && size2 == 0) {
+    throw new Error('right strand must not be empty')
+  }
   if (size1 !== size2) {
     throw new Error('left and right strands must be of equal length')
   }
