@@ -6,7 +6,7 @@
 export const compute = (DNA1, DNA2) => {
   const size1 = DNA1.length;
   const size2 = DNA2.length;
-  if (size1 === 0 && size2 === 0) {
+  if (size1 === 0 && size2 === 0 || DNA1 === DNA2) {
     return 0;
   }
 }
