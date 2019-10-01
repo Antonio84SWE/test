@@ -3,6 +3,10 @@
 // convenience to get you started writing code faster.
 //
 
-export const compute = () => {
-  throw new Error("Remove this statement and implement this function");
-};
+export const compute = (DNA1, DNA2) => {
+  const size1 = DNA1.length;
+  const size2 = DNA2.length;
+  if (size1 === 0 && size2 === 0) {
+    return 0;
+  }
+}
