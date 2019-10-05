@@ -14,4 +14,13 @@ export const score = (word) => {
     ['Q', 'Z', 10]
   ];
   const letters = [...word.toUpperCase()];
+  let result = letters.reduce((sum, l) => {
+    SCORETABLE.forEach(lScore => {
+      if (lScore.includes(l)) {
+        sum = sum + lScore[lScore.length - 1];
+      }
+    });
+    return sum;
+  }, 0);
+  return result;
 };
