@@ -4,5 +4,13 @@
 //
 
 export const score = () => {
-  throw new Error("Remove this statement and implement this function");
+  const SCORETABLE = [
+    ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T', 1],
+    ['D', 'G', 2],
+    ['B', 'C', 'M', 'P', 3],
+    ['F', 'H', 'V', 'W', 'Y', 4],
+    ['K', 5],
+    ['J', 'K', 8],
+    ['Q', 'Z', 10]
+  ]
 };
