@@ -3,7 +3,7 @@
 // convenience to get you started writing code faster.
 //
 
-export const score = () => {
+export const score = (word) => {
   const SCORETABLE = [
     ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T', 1],
     ['D', 'G', 2],
@@ -12,5 +12,6 @@ export const score = () => {
     ['K', 5],
     ['J', 'K', 8],
     ['Q', 'Z', 10]
-  ]
+  ];
+  const letters = [...word.toUpperCase()];
 };
