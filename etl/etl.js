@@ -1,12 +1,11 @@
-export const transform = (oldFormat) => {
-  const newValues = Object.keys(oldFormat)
-    .map(numbStr => parseInt(numbStr));
+export const transform = (data) => {
+  const newFormat = {};
+  const newValues = Object.keys(data)
 
-  const newKeys = Object.values(oldFormat)
-    .map(group => group.map(letter => letter.toLowerCase()));
-
-  return newKeys.reduce((newFormat, letterGroup, i) => {
-    letterGroup.forEach(letter => newFormat[letter] = newValues[i]);
-    return newFormat;
-  }, {})
-};
+  newValues.forEach(oldKey => {
+    data[oldKey].forEach(letter => {
+      newFormat[letter.toLowerCase()] = parseInt(oldKey)
+    });
+  });
+  return newFormat;
+}
