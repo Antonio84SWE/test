@@ -1,11 +1,8 @@
 export const transform = (data) => {
   const newFormat = {};
-  const newValues = Object.keys(data)
 
-  newValues.forEach(oldKey => {
-    data[oldKey].forEach(letter => {
-      newFormat[letter.toLowerCase()] = parseInt(oldKey)
-    });
-  });
+  Object.entries(data)
+    .forEach(([score, letters]) => letters
+      .forEach(lett => newFormat[lett.toLowerCase()] = Number(score)));
   return newFormat;
 }
